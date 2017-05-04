@@ -1,11 +1,29 @@
 // 1. Make the function deck_o_cards assemble an array of cards using the provided suits and values arrays.
 // Each card in the deck should be an object formatted as: {suit: 'hearts', value: 'A'}
-function deck_o_cards() {
-  var values = [2, 3, 4, 5, 6, 7, 8, 9, 10, 'Jack', 'Queen', 'King', 'Ace'];
-  var suits = ['hearts', 'diamonds', 'clubs', 'spades'];
+function makeDeck() {
+    var suits = ['Clubs', 'Spades', 'Diamonds', 'Hearts'];
+    var values = ['2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K', 'A'];
 
-  var cards = []; // deck
-  var shuffledCards = []; // deck shuffled
+    var deck = [];
+    //debugger; tool to see each step in the loops
+
+    for(var i = 0; i < suits.length; i++){ // this happens 4 times
+        //var suit = suits [i];
+        for(var j = 0; j < values.length; j++){ // this happens 13 times
+
+            //var value = values[j];
+            //var card = {}; this is simpler-step by step code
+            //card.suit=suit;
+            //card.value=value;
+            //console.log(card); checks to see if each card is being made
+            //deck.push(card);
+
+            deck.push ( { suit: suits[i], value: values[j] } ); //condensed version of lines 10 & 12-17
+        }
+    }
+    //console.log(deck); checks to see if deck is made
+}
+makeDeck();
 
   // Make 52 card objects and store them in the "cards" array
   // Hint: use 2 for loops
@@ -23,7 +41,6 @@ function deck_o_cards() {
   // "The top card is the {value} of {suit}"
 
 }
-
 
 
 // Fisher-Yates Shuffle
